@@ -8,9 +8,23 @@ class TaskRepository {
     this.tasks = []
   }
 
+  get(): Task[] {
+    return this.tasks
+  }
+
   add(data: Task): Task {
     this.tasks.push(data)
     return data
+  }
+
+  update(data: Task, position: number){
+    this.tasks[position] = data
+    return data
+  }
+
+  delete(position: number) {
+    delete this.tasks[position]
+    return position
   }
 }
 
